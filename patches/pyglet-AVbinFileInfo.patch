@@ -1,0 +1,13 @@
+Index: pyglet/media/avbin.py
+===================================================================
+--- pyglet/media/avbin.py	(revision 1423)
++++ pyglet/media/avbin.py	(working copy)
+@@ -211,7 +211,7 @@
+         self._video_stream = None
+         self._audio_stream = None
+ 
+-        file_info = AVbinFileInfo()
++        self.file_info = file_info = AVbinFileInfo()
+         file_info.structure_size = ctypes.sizeof(file_info)
+         av.avbin_file_info(self._file, ctypes.byref(file_info))
+         self._duration = timestamp_from_avbin(file_info.duration)
